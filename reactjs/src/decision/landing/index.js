@@ -19,8 +19,8 @@ class Landing extends React.Component {
           {publicDecisions.map((decision) => (
             <li className={styles.list__item} key={decision.id}>
               <span className={styles.list__item__title}>{decision.title}</span>
-              <Link url={`/decisions/${decision.id}`} />
-              <Link url={`/admin/decisions/${decision.id}`} title="Edit" icon="fa-edit" className="linkSecondary" />
+              <Link url={`/admin/decisions/${decision.id}`} />
+              <Link url={`/admin/decisions/edit/${decision.id}`} title="Edit" icon="fa-edit" className="linkSecondary" />
             </li>
           ))}
 

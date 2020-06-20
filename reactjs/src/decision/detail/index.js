@@ -4,7 +4,7 @@ import RRPropTypes from 'react-router-prop-types';
 import { Link as RRLink } from 'react-router-dom';
 import styles from '../styles.module.css';
 import Link from '../../link';
-import DecisionsContainer from '../../containers/decisions';
+import DecisionContainer from '../../containers/decision';
 
 class DecisionDetail extends React.Component {
   componentDidMount() {
@@ -24,7 +24,7 @@ class DecisionDetail extends React.Component {
       <>
         <h1 className={styles.heading}>
           {decision.title}
-          <Link url={`/decisions/${decision.id}`} />
+          <Link url={`/admin/decisions/${decision.id}`} />
           <Link url={`/admin/decisions/edit/${decision.id}`} title="Edit" icon="fa-edit" />
           <span onClick={this.delete} role="presentation">
             <Link url="/admin/decisions" title="Delete" icon="fa-trash" className="linkSecondary" />
@@ -59,4 +59,4 @@ DecisionDetail.defaultProps = {
   options: [],
 };
 
-export default DecisionsContainer(DecisionDetail);
+export default DecisionContainer(DecisionDetail);

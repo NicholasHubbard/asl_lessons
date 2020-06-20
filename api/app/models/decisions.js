@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Decisions = sequelize.define('Decisions', {
     id: {
-      defaultValue: DataTypes.UUID4,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
       type: DataTypes.UUID,
       validate: {

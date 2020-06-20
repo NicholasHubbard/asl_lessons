@@ -3,8 +3,8 @@ module.exports = {
     id: {
       allowNull: false,
       primaryKey: true,
-      type:Sequelize.UUID,
-      defaultValue: Sequelize.UUID4,
+      type: Sequelize.UUID,
+      defaultValue: Sequelize.UUIDV4,
     },
     title: {
       type: Sequelize.STRING
@@ -21,5 +21,5 @@ module.exports = {
       type: Sequelize.DATE
     }
   }),
-  down: (queryInterface) => queryInterface.dropTable('Decisions');
+  down: (queryInterface) => queryInterface.dropTable('Decisions'),
 };

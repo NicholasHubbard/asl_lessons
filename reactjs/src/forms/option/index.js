@@ -71,12 +71,12 @@ class OptionForm extends React.Component {
       <>
         <h1 className={styles.heading}>
           {id && (
-            <>
+            <React.Fragment>
               <span>Edit Option</span>
               <span onClick={this.delete} role="presentation">
                 <Link url={`/admin/decisions/${decisionId}`} title="Delete" icon="fa-trash" className="linkSecondary" />
               </span>
-            </>
+            </React.Fragment>
           )}
 
           {!id && (
@@ -119,4 +119,4 @@ OptionForm.defaultProps = {
   option: {},
 };
 
-export default OptionsContainer(OptionForm);
+export default OptionContainer(OptionForm);

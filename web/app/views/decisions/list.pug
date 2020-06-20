@@ -7,4 +7,4 @@ block content
       li.list__item
         span.list__item__title= decision.title
         +link('/admin/decisions/'+decision.id, 'View')
-        +link('/admin/decisions/'+decision.id, 'Edit', 'fa-edit', 'linkSecondary')
+        +link('/admin/decisions/edit/'+decision.id, 'Edit', 'fa-edit', 'linkSecondary')
