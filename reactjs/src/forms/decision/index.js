@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 import styles from '../styles.module.css';
-import DecisionsContainer from '../../containers/decision';
+import DecisionContainer from '../../containers/decision';
 
 class DecisionForm extends React.Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class DecisionForm extends React.Component {
   componentDidMount() {
     // get the id from the route params
     const { fetchDecision, match: { params: { id } } } = this.props;
+    console.log("fetchDecision >>>>", this.props.match);
     if (id) fetchDecision(id);
   }
 
@@ -35,6 +36,7 @@ class DecisionForm extends React.Component {
     const { decision: { id }, saveDecision, history } = this.props;
     const { title, type = 'public' } = this.state;
     const data = await saveDecision({ id, title, type });
+    console.log('DATA >>>> ', id)
     history.push(`/admin/decisions/${data.id}`);
   }
 
@@ -112,4 +114,4 @@ DecisionForm.defaultProps = {
   decision: {},
 };
 
-export default DecisionsContainer(DecisionForm);
+export default DecisionContainer(DecisionForm);

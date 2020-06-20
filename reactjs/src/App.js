@@ -17,7 +17,7 @@ class App extends Component {
           <Route path="/" component={Header} />
           <main className={styles.main__container}>
             <Route path="/" exact component={Landing} />
-            <Route path="/login/slack/callback" exact component={Login} />
+            <Route path="(/login||/slack/callback)" exact component={Login} />
             <Route path="/admin/decisions" exact component={DecisionList} />
 
             <Switch>

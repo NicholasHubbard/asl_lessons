@@ -11,7 +11,7 @@ class DecisionList extends React.Component {
   }
 
   render() {
-    const { userDecisions } = this.prop;
+    const { userDecisions } = this.props;
     return (
       <>
         <h1 className={styles.heading}>My Decisions</h1>

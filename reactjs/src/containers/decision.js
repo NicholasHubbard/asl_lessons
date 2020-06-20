@@ -2,7 +2,7 @@ import React from 'react';
 import API from '../API';
 
 export default function container(Component) {
-  return class DecisionsContainer extends React.Component {
+  return class DecisionContainer extends React.Component {
     // the default state
     state = {
       decision: {},
@@ -11,6 +11,7 @@ export default function container(Component) {
 
     fetchDecision = async (id) => {
       // get the details of the decision
+      console.log("CONTAINER DECISION >>>> ", id);
       const decision = await API.get(`/decisions/${id}`);
       // get the options for this decision
       const options = await API.get(`/options?decisionId=${id}`);
@@ -18,6 +19,7 @@ export default function container(Component) {
     }
 
     saveDecision = async (decision) => {
+      console.log("Object >>> ", decision);
       if (decision.id) {
         return API.put(`/decisions/${decision.id}`, decision);
       }

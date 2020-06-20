@@ -17,29 +17,30 @@ class Login extends React.Component {
     if (code) verifySlackCode(code);
   }
 
-    redirectToSlack = () => {
-      let SLACK_URL = 'http://slack.com/oauth/authorize';
-      SLACK_URL += `client_id=${process.env.REACT_APP_CLIENT_ID}`;
-      SLACK_URL += '&scope=identity.basic,identity.email';
-      SLACK_URL += `&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`;
-      window.location = SLACK_URL;
-    }
+  redirectToSlack = () => {
+    let SLACK_URL = 'http://slack.com/oauth/authorize?';
+    SLACK_URL += `client_id=${process.env.REACT_APP_CLIENT_ID}`;
+    SLACK_URL += '&scope=identity.basic,identity.email';
+    SLACK_URL += `&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`;
+    window.location = SLACK_URL;
+  }
 
-    render() {
-      const { loggedIn } = this.prop;
-      if (loggedIn) return <Redirect to="/admin/decisions" />;
-      return (
-        <>
-          <h1>Login</h1>
-          <div>
-            <button type="button" onClick={this.redirectToSlack} className={styles.button}>
-              <i className="fab fa-slack" />
-              <span>Login with Slack</span>
-            </button>
-          </div>
-        </>
-      );
-    }
+  render() {
+    console.log("PROPS >>>> ", this.props.loggedIn);
+    const { loggedIn } = this.props;
+    if (loggedIn) return <Redirect to="/admin/decisions" />;
+    return (
+      <>
+        <h1>Login</h1>
+        <div>
+          <button type="button" onClick={this.redirectToSlack} className={styles.button}>
+            <i className="fab fa-slack" />
+            <span>Login with Slack</span>
+          </button>
+        </div>
+      </>
+    );
+  }
 }
 
 Login.propTypes = {
