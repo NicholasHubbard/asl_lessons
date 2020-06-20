@@ -1,0 +1,11 @@
+header.header
+  .header__container
+    h1
+      a.header__brand(href="/") Decision Maker
+      .links
+        if loggedIn
+          a.header__link(href="/admin/decisions") Dashboard
+          a.header__link(href="/admin/decisions/new") Create a new decision
+          a.header__link(href="/logout") Logout
+        else
+          a.header__link(href="/login") Login

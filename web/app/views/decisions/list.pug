@@ -1,0 +1,10 @@
+extends ../_layout
+include ../_includes/link_mixin
+block content
+  h1.heading My Decisions
+  ul.list
+    for decision in decisions
+      li.list__item
+        span.list__item__title= decision.title
+        +link('/admin/decisions/'+decision.id, 'View')
+        +link('/admin/decisions/'+decision.id, 'Edit', 'fa-edit', 'linkSecondary')

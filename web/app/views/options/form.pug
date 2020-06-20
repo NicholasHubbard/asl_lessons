@@ -1,0 +1,16 @@
+extends ../_layout
+include ../_includes/link_mixin
+block content
+  h1.heading
+    if id
+      | Edit Option
+      +link('/admin/options/delete/'+id+'?decisionId='+decisionId, 'Delete', 'fa-trash', 'link__delete')
+    else
+      | New Option
+  form.form(method="POST")
+    label.form__label value
+      input.form__input(type="text", name="value", value=value)
+    button.button(type="submit") Save
+    if errors
+      for error in errors
+        small.flash=error.msg

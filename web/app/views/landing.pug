@@ -1,0 +1,14 @@
+extends _layout
+include _includes/link_mixin
+block content  
+  h1.heading Public Decisions
+  #decisions
+    if decisions
+      ul.list
+        for decision in decisions
+          li.list__item
+            span.list__item__title= decision.title
+            +link('/admin/decisions/'+decision.id, 'View')
+      a.button(href="/admin/decisions/new") Add a new quiz
+    else 
+      a.button(href="/admin/decisions/new") Add a new quiz

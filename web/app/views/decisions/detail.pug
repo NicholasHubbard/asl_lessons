@@ -1,0 +1,14 @@
+extends ../_layout
+include ../_includes/link_mixin
+block content
+  h1.heading= decision.title
+    +link('/admin/decisions/'+decision.id, 'View')
+    +link('/admin/decisions/edit/'+decision.id, 'Edit', 'fa-edit')
+    +link('/admin/decisions/delete/'+decision.id, 'Delete', 'fa-trash', 'linkSecondary')
+  h2.headingSecondary Options
+  ul.list
+    for option in options
+      li.list__item
+        span.list__item__title= option.value
+        +link('/admin/options/edit/'+option.id+'?decisionId='+decision.id, 'Edit', 'fa-edit')
+  a.button(href="/admin/options/new?decisionId="+decision.id) Add a new option

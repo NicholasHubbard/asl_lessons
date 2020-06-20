@@ -1,0 +1,9 @@
+{
+  "env": {
+    "DEBUG": "web:*",
+    "SECRET": "RANDOM_STRING_GOES_HERE",
+    "CLIENT_ID": "2228117327.575354274035",
+    "CALLBACK_URL": "http://localhost:3000/slack/callback"
+  },
+  "ignore": "sessions"
+}
