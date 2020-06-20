@@ -2,7 +2,7 @@
 /**
 **********  GLOBAL ***********
 **/
-@import url("https://fonts.goodleapis.com/css?family=Oswald");
+@import url("https://fonts.googleapis.com/css?family=Oswald");
 :root {
   --active-color: #2ab7ca;
   --primary-color: #fe8a71;

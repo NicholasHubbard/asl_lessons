@@ -34,11 +34,12 @@ export default function container(Component) {
           /* pass all other props that are being passed to this component forward */
           {...this.props}
           option={option}
-          fetchOption={fetchOption}
-          saveOption={saveOption}
-          deleteOption={deleteOption}
+          fetchOption={this.fetchOption}
+          saveOption={this.saveOption}
+          deleteOption={this.deleteOption}
         />
       );
     }
   };
+
 }

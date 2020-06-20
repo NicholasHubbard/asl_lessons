@@ -47,6 +47,7 @@ exports.createOption = async (req, res) => {
 exports.updateOption = async (req, res) => {
   // get the id from the route params
   const { id } = req.params;
+  console.log('UPDATE OPTION >>> ', id);
   try {
     // update the option with the request body
     const [, [updatedOption]] = await Options.update(req.body, {

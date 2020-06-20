@@ -8,7 +8,7 @@ import DecisionList from './decision/list';
 import Landing from './decision/landing';
 import DecisionDetail from './decision/detail';
 import DecisionForm from './forms/decision';
-//import OptionForm from './forms/option';
+import OptionForm from './forms/option';
 
 class App extends Component {
   render() {
@@ -25,6 +25,8 @@ class App extends Component {
               <Route path="/admin/decisions/new" exact component={DecisionForm} />
               <Route path="/admin/decisions/edit/:id" exact component={DecisionForm} />
               <Route path="/admin/decisions/:id" exact component={DecisionDetail} />
+              <Route path="/admin/options/new" exact component={OptionForm} />
+              <Route path="/admin/options/edit/:id" exact component={OptionForm} />
             </Switch>
           </main>
         </div>

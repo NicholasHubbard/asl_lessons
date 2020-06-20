@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 import styles from '../styles.module.css';
 import Link from '../../link';
-import { OptionContainer } from '../../containers';
+import OptionContainer from '../../containers/option';
 
 class OptionForm extends React.Component {
   state = {
@@ -52,7 +52,7 @@ class OptionForm extends React.Component {
       option: {
         id,
         // rename value prop to defaultTitle
-        value: defaultTitle = '',
+        value: defaultValue = '',
       },
       location,
     } = this.props;
