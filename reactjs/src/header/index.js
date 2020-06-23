@@ -4,9 +4,12 @@ import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css';
-import AuthContainer from '../containers/auth';
+import HeaderContainer from './container';
 
 class Header extends React.Component {
+  componentDidMount(){
+    console.log('hello>>>>',this.props.loggedIn)
+  }
   logUserOut = () => {
     const { logout, history } = this.props;
     logout();
@@ -51,4 +54,4 @@ Header.defaultProps = {
   loggedIn: false,
 };
 
-export default AuthContainer(Header);
+export default HeaderContainer(Header);

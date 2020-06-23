@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 import styles from '../styles.module.css';
 import Link from '../../link';
-import OptionContainer from '../../containers/option';
+import OptionFormContainer from './container';
 
 class OptionForm extends React.Component {
   state = {
@@ -119,4 +119,4 @@ OptionForm.defaultProps = {
   option: {},
 };
 
-export default OptionContainer(OptionForm);
+export default OptionFormContainer(OptionForm);

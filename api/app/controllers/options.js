@@ -58,7 +58,7 @@ exports.updateOption = async (req, res) => {
     });
 
     // send the updated option back to the front-end
-    res.json(updateOption);
+    res.json(updatedOption);
   } catch (e) {
     // map the errors messages to send them back
     const errors = e.errors.map((err) => err.message);

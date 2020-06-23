@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles.module.css';
 import Link from '../../link';
-import DecisionsContainer from '../../containers/decisions';
+import LandingContainer from './container';
 
 class Landing extends React.Component {
   componentDidMount() {
@@ -13,8 +13,8 @@ class Landing extends React.Component {
   render() {
     const { publicDecisions } = this.props;
     return (
-      <>
-        <h1 className={styles.heading}>My Decisions</h1>
+      <React.Fragment>
+        <h1 className={styles.heading}>Public Decisions</h1>
         <ul className={styles.list}>
           {publicDecisions.map((decision) => (
             <li className={styles.list__item} key={decision.id}>
@@ -25,7 +25,7 @@ class Landing extends React.Component {
           ))}
 
         </ul>
-      </>
+      </React.Fragment>
     );
   }
 }
@@ -39,4 +39,4 @@ Landing.defaultProps = {
   publicDecisions: [],
 };
 
-export default DecisionsContainer(Landing);
+export default LandingContainer(Landing);

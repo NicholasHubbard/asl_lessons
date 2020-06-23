@@ -4,13 +4,13 @@ import RRPropTypes from 'react-router-prop-types';
 import { Link as RRLink } from 'react-router-dom';
 import styles from '../styles.module.css';
 import Link from '../../link';
-import DecisionContainer from '../../containers/decision';
+import DecisionContainer from './container';
 
 class DecisionDetail extends React.Component {
   componentDidMount() {
     // get the id from the route params
-    const { fetchDecision, match: { params: { id } } } = this.props;
-    fetchDecision(id);
+    const { fetchUserDecision, match: { params: { id } } } = this.props;
+    fetchUserDecision(id);
   }
 
   delete = async () => {
@@ -49,7 +49,7 @@ class DecisionDetail extends React.Component {
 DecisionDetail.propTypes = {
   decision: PropTypes.shape({ title: PropTypes.string, id: PropTypes.string }),
   options: PropTypes.arrayOf(PropTypes.object),
-  fetchDecision: PropTypes.func.isRequired,
+  fetchUserDecision: PropTypes.func.isRequired,
   match: RRPropTypes.match.isRequired,
   deleteDecision: PropTypes.func.isRequired,
 };

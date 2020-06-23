@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles.module.css';
 import Link from '../../link';
-import DecisionsContainer from '../../containers/decisions';
+import ListContainer from './container';
 
 class DecisionList extends React.Component {
   componentDidMount() {
@@ -39,4 +39,4 @@ DecisionList.defaultProps = {
   userDecisions: [],
 };
 
-export default DecisionsContainer(DecisionList);
+export default ListContainer(DecisionList);

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 import styles from '../styles.module.css';
-import DecisionContainer from '../../containers/decision';
+import DecisionFormContainer from './container';
 
 class DecisionForm extends React.Component {
   constructor(props) {
@@ -114,4 +114,4 @@ DecisionForm.defaultProps = {
   decision: {},
 };
 
-export default DecisionContainer(DecisionForm);
+export default DecisionFormContainer(DecisionForm);

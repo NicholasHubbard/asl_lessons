@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 import { Redirect } from 'react-router-dom';
 import styles from './styles.module.css';
-import AuthContainer from '../containers/auth';
+import LoginContainer from './container';
 
 class Login extends React.Component {
   componentDidMount() {
@@ -53,4 +53,4 @@ Login.defaultProps = {
   loggedIn: false,
 };
 
-export default AuthContainer(Login);
+export default LoginContainer(Login);
